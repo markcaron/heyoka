@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+  --font-size: 16px;
+  --line-height: 1.5em;
+  --font-stack: 'Montserrat', Arial, sans-serif;
+  --text-color: #151515;
+  --text-color-inverted: #fff;
+  --border-color: #ccc;
+  --link-color: #06c;
+  --focus-color: #394d72;
+  --hover-color: #f1483a;
+  --ui-border-radius: 3px;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	color: var(--text-color);
+	font: var(--font-size)/var(--line-height) var(--font-stack);
+}
+
+a,
+a:visited {
+  --link-local-color: var(--link-color);
+  color: var(--link-local-color);
+}
+
+a:hover {
+  --link-local-color: var(--hover-color);
+}
+
+a:focus {
+  --link-local-color: var(--focus-color);
+}
+
+.cta::after {
+  display: inline-block;
+  content: "";
+  margin-left: .25rem;
+  width: .5rem;
+  height: .5rem;
+  border-top: 2px solid var(--link-local-color);
+  border-right: 2px solid var(--link-local-color);
+  transform: rotateZ(45deg);
+}
+
+/* Typography */
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2em;
+  font-weight: 500;
+}
+
+h2 {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: var(--line-height);
+  text-transform: uppercase;
+}
+
+header p {
+  margin: 0;
+}
+
+/* Layout */
+
+.page {
+  margin: 0 auto;
+  max-width: 48rem;
+  padding: 1rem;
+}
+
+header,
+.about {
+  margin-bottom: 2rem;
+}
+
+.social {
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.social ul {
+  position: relative;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.social li {
+  display: flex;
+}
+
+.social a {
+  --social-color: var(--text-color);
+  --social-bg-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  flex: 1 1 auto;
+  padding: 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: var(--social-color);
+  background: var(--social-bg-color);
+  border-radius: var(--ui-border-radius);
+}
+
+.social svg {
+  width: 3rem;
+	height: 3rem;
+  fill: var(--social-color);
+}
+
+.social a:hover {
+  --social-color: var(--text-color-inverted);
+  --social-bg-color: var(--hover-color);
+}
+
+.social a:focus {
+  --social-color: var(--text-color-inverted);
+  --social-bg-color: var(--focus-color);
+}
+
+.social span {
+  display: block;
+  margin-top: auto;
+  font-size: .75rem;
+  line-height: 1.3em;
+}
+
+@media screen and (min-width: 48rem) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .social ul {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
