@@ -2,20 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Resume: Mark Caron | Principal UX Interaction Designer, Web Developer and Unicorn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume: Mark Caron :: Manager / DesignOps / UX</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link href="css/resume.css" rel="stylesheet">
-    <style>
 
-    </style>
+    <script src="js/resume.js"></script>
   </head>
   <body>
-    <main role="main">
+    <article>
 
       <header>
         <h1>Mark Caron</h1>
-        <strong>Principal UX Interaction Designer, Web Developer and Unicorn</strong>
+        <strong>Manager / DesignOps / <abbr title="User Experience">UX</abbr></strong>
         <address class="vcard">
           <span class="fn">Mark Caron</span><br />
           <span class="adr">
@@ -25,34 +27,56 @@
         </address>
       </header>
 
-      <div class="content">
+      <main class="content">
         <section class="experience">
           <h2>Experience</h2>
           <section class="subsection">
-            <p>Principal User Experience Designer and Developer with experience in leading and mentoring cross-functional engineering teams, and standardizing best practices.</p>
+            <p>Passionate DesignOps and UX leader experienced in managing cross-functional design and engineering teams, and standardizing best practices.</p>
           </section>
           <section class="subsection">
-            <h3>Principal UX Interaction Designer & Web Developer, Creative Lead<span class="date-comma">,</span> <span class="date">2012 to present</span></h3>
+            <!--
+              Date Range Signifiers
+
+              - Using ISO-8601 time interval syntax, like "2004/2012" [1][2]
+              - Using EDTF "Open end time interval" to denote 'to present', like "2019/.." [3]
+
+              [1] https://wiki.whatwg.org/wiki/Time_element
+              [2] https://en.wikipedia.org/wiki/ISO_8601#Time_intervals
+              [3] https://www.loc.gov/standards/datetime/
+            -->
+            <h3>Associate Manager, Delivery Lead<span class="date-comma">,</span> <time datetime="2019/.." class="date">2019 to present</time></h3>
             <p class="location">Red Hat, Raleigh, NC</p>
             <ul>
-              <li>Consult with stakeholders, product owners, and developers across multiple departments on creative direction, UX, interaction design, information architecture, Web Standards, and accessibility.</li>
-              <li>Serve on Red Hat’s Digital Design System Collaborative (a small team of design leads from across Red Hat) and in our Web Strategy Summits in an effort to standardize design patterns and component libraries for our products and web properties.</li>
-              <li>Manage Red Hat’s Customer Portal front-end development policies, style guidelines, design patterns, PatternFly Elements library (framework-agnostic Web Components), and chroming service for Red Hat’s award-winning Customer Portal.</li>
-              <li>Design UI wireframes; create rapid prototypes; design mockups; consult on UX/UI issues, bugs and RFEs; map user journeys; and develop Customer Portal web applications.</li>
-              <li>Organize TriUXPA events at Red Hat, conduct internal “Lunch and Learns” about accessibility and web standards, and speak about UX and web development at local middle and high schools.</li>
-              <li>Established and co-lead Red Hat’s partnership with Governor Morehead School in knowledge sharing on UX research in accessibility through an Accessibility Specialist mentorship program.</li>
+              <li>Manage IT Training & Certifications Applications team of six direct reports, responsible for career development, performance reviews, and delivery of web applications for Red Hat's Global Learning Services.</li>
+              <li>Collaborate with business and other stakeholders on feature requests, project planning and cross-departmental priorities and resource management.</li>
+              <li>Lead scrum ceremonies.</li>
+              <li>Manage my team’s migration of 23 applications to our new datacenter. Part of a larger, multi-year IT cloud infrastructure update which requires coordination across the entire IT organization.</li>
+              <li>Work with my team and the business to improve our applications' UX and accessibility. This effort includes streamlining our <abbr title="User Interface">UI</abbr> service and developer workflow by standardizing on Red Hat's new <a href="https://www.patternflyelements.com">PatternFly Elements</a> web component-based pattern library (PFE)—a cross-department, open source project which I helped start and have continued to contribute to since my last role.</li>
+              <li>Active member of RH Accessibility working group (RHa11y)—a company-wide community of accessibility experts who focus on raising awareness on and advocating for accessibility; improving Red Hat's and open source accessibility standards; building out development, QA and content authoring tools and resources; as well as providing guidance to Red Hatters on accessibility.</li>
+            </ul>
+          </section>
+          <section class="subsection">
+            <h3>Principal UX Interaction Designer &amp; Web Developer, Creative Lead<span class="date-comma">,</span> <time datetime="2012/2019" class="date">2012 to 2019</time></h3>
+            <p class="location">Red Hat, Raleigh, NC</p>
+            <ul>
+              <li>Consulted with stakeholders, product owners, and developers across multiple departments on creative direction, UX, interaction design, information architecture, Web Standards, and accessibility.</li>
+              <li>Served on Red Hat’s Digital Design System Collaborative (a small team of design leads from across Red Hat) and in our Web Strategy Summits in an effort to standardize design patterns and component libraries for our products and web properties.</li>
+              <li>Managed front-end development policies, style guidelines, design patterns, PatternFly Elements library (framework-agnostic Web Components), and chroming service for Red Hat’s award-winning Customer Portal.</li>
+              <li>Designed UI wireframes; created rapid prototypes; designed mockups; consulted on UX/UI issues, bugs and RFEs; mapped user journeys; and developed Customer Portal web applications.</li>
+              <li>Organized TriUXPA events at Red Hat, conducted internal “Lunch and Learns” about accessibility and web standards, and spoke about UX and web development at local middle and high schools.</li>
+              <li>Established and co-led Red Hat’s partnership with Governor Morehead School in knowledge sharing on UX research in accessibility through an Accessibility Specialist mentorship program.</li>
               <li>Invited to serve on the Governor Morehead Foundation’s board as well as WakeTech’s Advisory Board as a result of the relationships built with the schools.</li>
             </ul>
           </section>
           <section class="subsection">
-            <h3>Senior Web Designer, Creative & Technical Lead<span class="date-comma">,</span> <span class="date">2004 to 2012</span></h3>
+            <h3>Senior Web Designer, Creative &amp; Technical Lead<span class="date-comma">,</span> <time datetime="2004/2012" class="date">2004 to 2012</time></h3>
             <p class="location">Atlantic BT, Raleigh, NC</p>
             <ul>
               <li>Provided creative direction to designers and led UX conceptualization.</li>
               <li>Directed design team’s day-to-day functions, managed design department resources, and interviewed design candidates.</li>
               <li>Consulted with clients on project scope, project requirements, design estimates and creative direction.</li>
               <li>Collaborated with UX and marketing teams to develop solutions for customers.</li>
-              <li>Mentored design and development teams in Web Standards and best web development practices.</li>
+              <li>Mentored design and development teams in Web Standards and web development best practices.</li>
               <li>Worked as lead designer on major projects, including marketing-focused websites, large-scale web and mobile applications, and e-commerce solutions.</li>
               <li>Provided technical assistance to front-end developers.</li>
               <li>Created and managed our front-end development library and company standards.</li>
@@ -64,40 +88,43 @@
         <section class="education">
           <h2>Education</h2>
           <section class="subsection">
-            <h3>Bachelors in Visual Art<span class="date-comma">,</span> <span class="date">2003</span></h3>
+            <h3>Bachelors in Visual Art<span class="date-comma">,</span> <time datetime="2003" class="date">2003</time></h3>
             <p class="institution">North Carolina State University, <span class="location">Raleigh, NC</span></p>
           </section>
         </section>
-      </div>
+      </main>
 
       <aside role="complementary">
         <section class="qualifications">
           <h2 id="h-qualifications">Qualifications</h2>
           <ul aria-labelledby="h-qualifications">
-            <li>UX, Web Standards and Accessibility specialist</li>
-            <li>Adobe Creative Cloud Suite (Xd, Ps, Ai, Id), Sketch, InVision, Craft, Balsamiq, and other tools of the trade</li>
-            <li>HTML5, CSS3, SASS/LESS, vanilla JavaScript, jQuery, PHP</li>
+            <li>UX, Web Standards &amp; Accessibility specialist</li>
+            <li>Proficient in building UI component libraries</li>
+            <li>Web Components, VueJS, Polymer, Bootstrap and other frameworks</li>
+            <li>Responsive Web Design and Mobile-First Development</li>
+            <li>Adobe Creative Cloud Suite (Xd, Ps, Ai, Id)</li>
+            <li>Sketch, InVision, Craft, Balsamiq, and other tools of the trade</li>
             <li>Wireframing, rapid prototyping and mockup design</li>
-            <li>Web Components, VueJS, Polymer, Bootstrap and building UI component libraries for developer platforms/frameworks</li>
-            <li>Agile Development & Scrum Methods, Responsive Web Design and Mobile-First Development</li>
+            <li>Agile Development &amp; Scrum methodologies</li>
+            <li>HTML5, CSS3, SASS/LESS, vanilla JavaScript, jQuery, PHP</li>
             <li>Drupal, WordPress and many other CMSs</li>
             <li>Git, NPM, Grunt/Gulp and other workflow tools</li>
           </ul>
         </section>
         <section class="extracurricular">
-          <h2 id="h-extracurricular">Extracurricular</h2>
+          <h2 id="h-extracurricular">Community</h2>
           <ul aria-labelledby="h-extracurricular">
-            <li>Governor Morehead Foundation board member</li>
+            <li>Vice President, <a href="https://gmfnc.org">Governor Morehead Foundation</a></li>
             <li>WakeTech Advisory Board member for Computer Technologies Program</li>
             <li>Triangle UXPA member and volunteer event organizer</li>
-            <li>Speaker at several middle & high school career days about UX</li>
-            <li>Beer fanatic & award-winning home brewer</li>
+            <li>Speaker at middle &amp; high school career days about UX</li>
+            <li>US Soccer D Licensed Coach</li>
             <li>Volunteer NCFC Youth (formerly CASL) soccer coach since 2003</li>
-            <li>2019 Coach of the Season</li>
+            <li>Coach of the Season &mdash; nominated and selected 3 times for my age group (Spring 2021, Spring 2019 and Fall 2019)</li>
           </ul>
         </section>
       </aside>
-    </main>
+    </article>
 
 
 

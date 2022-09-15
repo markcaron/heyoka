@@ -1,11 +1,13 @@
 :root {
   --font-size: 16px;
   --line-height: 1.5rem;
+  --background-color: #fff;
   --text-color: #333;
   --link-color: #06c;
   --link-color-visited: rebeccapurple;
   --link-color-hover: #004080;
-  --font-stack: "Roboto","Helvetica", Arial, sans-serif;
+  --font-stack: "Roboto", "Helvetica", Arial, sans-serif;
+  --font-stack-heading: "Roboto Condensed", "Helvetica", Arial, sans-serif;
 
   --grid-baseline: 1.5rem;
   --grid-baseline-shift: 0;
@@ -29,19 +31,16 @@ body {
   padding: 1.5rem;
   font: var(--font-size)/var(--line-height) var(--font-stack);
   color: var(--text-color);
-
-  /* Grid lines */
-  /* background-image: var(--background-baseline);
-  background-size: 100% var(--grid-baseline);
-  background-position: 0 var(--grid-baseline-shift); */
+  background: var(--background-color);
 }
 
 h1 {
-  font-size: 3rem;
-  line-height: 3rem;
-  margin: .5rem 0 0;
+  font-size: 3.5rem;
+  line-height: 1em;
+  margin: .5rem 0 1rem;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
+  font-family: var(--font-stack-heading);
 }
 
 h2 {
@@ -81,14 +80,30 @@ a:focus {
   outline: 2px dotted var(--link-color);
 }
 
+a[target="_blank"]::after {
+  content: "\29c9"; /* Unicode symbol of 2 stacked squares or "windows" */
+  position: relative;
+  top: -4px;
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: top;
+  font-size: 1.25em;
+}
+
+abbr {
+	text-decoration: none;
+	border-bottom: 1px dotted var(--text-color);
+}
+
 /* Layout */
-main {
+article {
   width: 100%;
   margin: 0 auto;
   padding-top: 1.5rem;
   display: grid;
   grid-column-gap: 3rem;
   grid-row-gap: 0;
+  grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "header  header  header"
                        "content content content"
@@ -111,7 +126,7 @@ header strong {
 
 aside {
   grid-area: sidebar;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 /* Divding borders */
@@ -200,8 +215,9 @@ aside li::before {
 }
 
 @media (min-width: 768px) {
-  main {
+  article {
     width: 720px;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas: "header  header  header"
                          "content content sidebar";
   }
@@ -212,8 +228,9 @@ aside li::before {
 }
 
 @media (min-width: 992px) {
-  main {
+  article {
     width: 960px;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas: "header  content  content"
                          "sidebar content content"
                          "sidebar  content  content";
@@ -224,7 +241,7 @@ aside li::before {
   }
 
   aside {
-    margin-top: -0.75rem;
+    margin-top: 1.5rem;
   }
 
   aside section:first-child {
@@ -253,11 +270,90 @@ aside li::before {
 }
 
 @media (min-width: 1200px) {
-  main {
+  article {
     width: 1140px;
   }
+}
 
+.horiz-rhythm {
+  background-image: var(--background-baseline);
+  background-size: 100% var(--grid-baseline);
+  background-position: 0 var(--grid-baseline-shift);
+}
+
+.btn-rhythm {
+  display: none; /* for mobile */
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 999;
+  padding: .5rem 1rem;
+  background: var(--background-color);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 3px;
+}
+
+@media (min-width: 768px) {
+  .btn-rhythm {
+    display: block;
+  }
+}
+
+.btn-rhythm:hover,
+.btn-rhythm:focus {
+  border-color: var(--link-color);
+  color: var(--link-color);
+}
+
+.btn-rhythm.selected {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+@media print {
+  .btn-rhythm {
+    display: none;
+  }
+
+  :root {
+    --font-size: 9pt;
+  }
+
+  body,
+  html {
+    font: var(--font-size)/var(--line-height) var(--font-stack);
+  }
+
+  body {
+    padding: 1.5rem 0;
+  }
+
+  a:not(.url)[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  article {
+    padding: 0;
+    display: table;
+  }
+
+  header,
   aside {
-    margin-top: -1.5rem;
+    display: table-cell;
+    width: 30%;
+  }
+
+  main {
+    display: table-cell;
+    width: 70%;
+    padding-left: 2rem;
+  }
+
+  /* since CSS Grid doesn't work in print yet :-( */
+  aside {
+    position: absolute;
+    left: 0;
+    top: 16.5rem;
   }
 }
