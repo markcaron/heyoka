@@ -37,7 +37,7 @@
 		<section id="about" class="about">
 			<h2>About Me</h2>
 			<p>Former Principal UX Designer and Developer who has now turned to the "dark side" as a Manager.</p>
-			<p>DesignOps and UX leader experienced in managing cross-functional design and engineering teams, and standardizing best practices. Passionate about people, accessibility and creating inclusive user experiences.</p>
+			<p>UX and Design Systems leader experienced in managing cross-functional design and engineering teams, and standardizing best practices. Passionate about people, accessibility and creating inclusive user experiences.</p>
 
 			<p class="resume"><a href="mark-caron-resume.html" class="cta">Read my résumé / <abbr title="Curriculum Vitae">CV</abbr></a></p>
 		</section>
