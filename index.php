@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mark Caron :: Manager / DesignOps / UX :: Raleigh, NC</title>
+<title>Mark Caron :: UX Manager / DesignOps + Design Systems :: Raleigh, NC</title>
 
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,7 +29,7 @@
 
 	<header id="masthead" class="masthead">
 		<h1>Mark Caron</h1>
-		<p>Manager / DesignOps / <abbr title="User Experience">UX</abbr></p>
+		<p><abbr title="User Experience">UX</abbr> Manager / DesignOps + Design Systems</p>
 	</header>
 
 	<main class="main-area">
