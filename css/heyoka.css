@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
-*, *::before, *::after { box-sizing: border-box; }
+@layer base, typography, layout;
 
 :root {
   --font-size: 16px;
@@ -16,170 +16,174 @@
   --ui-border-radius: 3px;
 }
 
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	overflow: hidden;
-	clip: rect(0,0,0,0);
-	border: 0;
-}
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
 
-body {
-	margin: 0;
-  font: var(--font-size)/var(--line-height) var(--font-stack);
-  color: var(--text-color);
-  background: var(--background-color);
-}
-
-a,
-a:visited {
-  --link-local-color: var(--link-color);
-  color: var(--link-local-color);
-}
-
-a:hover {
-  --link-local-color: var(--hover-color);
-}
-
-a:focus {
-  --link-local-color: var(--focus-color);
-}
-
-.cta::after {
-  display: inline-block;
-  content: "";
-  margin-left: .25rem;
-  width: .5rem;
-  height: .5rem;
-  border-top: 2px solid var(--link-local-color);
-  border-right: 2px solid var(--link-local-color);
-  transform: rotateZ(45deg);
-}
-
-/* Typography */
-
-h1 {
-  margin: 0;
-  font-size: 2rem;
-  line-height: 1.2em;
-  font-weight: 500;
-}
-
-h2 {
-  margin: 0;
-  font-size: 0.875rem;
-  line-height: var(--line-height);
-  text-transform: uppercase;
-}
-
-h3 {
-	margin: 0;
-  font-size: 0.875rem;
-  line-height: var(--line-height);
-}
-
-header p {
-  margin: 0;
-}
-
-abbr {
-	text-decoration: none;
-	border-bottom: 1px dotted var(--text-color);
-}
-
-/* Layout */
-
-.page {
-  margin: 0 auto;
-  max-width: 48rem;
-  padding: 1rem;
-
-	/* better sticky footer! */
-	min-height: 100vh;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto 1fr auto;
-	grid-gap: 1rem;
-}
-
-header,
-.about {
-  margin-bottom: 2rem;
-}
-
-.social {
-  margin: 4rem 0;
-  padding-top: 1.25rem;
-  border-top: 0.125rem solid var(--border-color);
-}
-
-.social ul {
-  position: relative;
-  margin: 1rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
-}
-
-.social li {
-  display: flex;
-}
-
-.social a {
-  --social-color: var(--text-color);
-  --social-bg-color: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: baseline;
-  flex: 1 1 auto;
-  padding: 1rem;
-  text-decoration: none;
-  text-align: center;
-  color: var(--social-color);
-  background: var(--social-bg-color);
-  border-radius: var(--ui-border-radius);
-}
-
-.social svg {
-  width: 3rem;
-	height: 3rem;
-  fill: var(--social-color);
-}
-
-.github svg {
-  width: 2.5rem;
-  height: auto;
-}
-
-.social a:hover {
-  --social-color: var(--text-color-inverted);
-  --social-bg-color: var(--hover-color);
-}
-
-.social a:focus {
-  --social-color: var(--text-color-inverted);
-  --social-bg-color: var(--focus-color);
-}
-
-.social span {
-  display: block;
-  margin-top: auto;
-  font-size: .875rem;
-  line-height: 1.3em;
-}
-
-@media screen and (min-width: 48rem) {
-  .page {
-    padding: 2rem 1rem;
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
   }
 
+  body {
+    margin: 0;
+    font: var(--font-size)/var(--line-height) var(--font-stack);
+    color: var(--text-color);
+    background: var(--background-color);
+  }
+  
+  :where(a),
+  :where(a):visited {
+    --link-local-color: var(--link-color);
+    color: var(--link-local-color);
+  }
+  
+  :where(a):hover {
+    --link-local-color: var(--hover-color);
+  }
+  
+  :where(a):focus {
+    --link-local-color: var(--focus-color);
+  }
+  
+  .cta::after {
+    display: inline-block;
+    content: "";
+    margin-inline-start: .25rem;
+    width: .5rem;
+    height: .5rem;
+    border-block-start: 2px solid var(--link-local-color);
+    border-inline-start: 2px solid var(--link-local-color);
+    transform: rotateZ(135deg);
+  }
+
+  :where(abbr) {
+    text-decoration: none;
+    border-block-end: 1px dotted var(--text-color);
+  }
+}
+
+@layer typography {
+  :where(h1) {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.2em;
+    font-weight: 500;
+  }
+  
+  :where(h2) {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: var(--line-height);
+    text-transform: uppercase;
+  }
+  
+  :where(h3) {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: var(--line-height);
+  }
+  
+  header p {
+    margin: 0;
+  }
+}
+
+@layer layout {
+  .page {
+    margin: 0 auto;
+    max-width: 48rem;
+    padding: 1rem;
+  
+    /* better sticky footer! */
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 1rem;
+  }
+  
+  header,
+  .about {
+    margin-block-end: 2rem;
+  }
+  
+  .social {
+    margin: 4rem 0;
+    padding-block-start: 1.25rem;
+    border-block-start: 0.125rem solid var(--border-color);
+  }
+  
   .social ul {
-    grid-template-columns: repeat(6, 1fr);
+    position: relative;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+  }
+  
+  .social li {
+    display: flex;
+  }
+  
+  .social a {
+    --social-color: var(--text-color);
+    --social-bg-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    padding: 1rem;
+    text-decoration: none;
+    text-align: center;
+    color: var(--social-color);
+    background: var(--social-bg-color);
+    border-radius: var(--ui-border-radius);
+  }
+  
+  .social svg {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--social-color);
+  }
+  
+  .github svg {
+    width: 2.5rem;
+    height: auto;
+  }
+  
+  .social a:hover {
+    --social-color: var(--text-color-inverted);
+    --social-bg-color: var(--hover-color);
+  }
+  
+  .social a:focus {
+    --social-color: var(--text-color-inverted);
+    --social-bg-color: var(--focus-color);
+  }
+  
+  .social span {
+    display: block;
+    margin-block-start: auto;
+    font-size: .875rem;
+    line-height: 1.3em;
+  }
+
+  @media screen and (min-width: 48rem) {
+    .page {
+      padding: 2rem 1rem;
+    }
+  
+    .social ul {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 }
