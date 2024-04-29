@@ -122,7 +122,7 @@
 }
 
 @layer layout {
-  article {
+  my-resume {
     width: 100%;
     margin: 0 auto;
     padding-block-start: 1.5rem;
@@ -223,7 +223,7 @@
   }
 
   @media (min-width: 768px) {
-    article {
+    my-resume {
       width: 720px;
       grid-template-rows: auto 1fr 1fr;
       grid-template-areas: "header  header  header"
@@ -236,7 +236,7 @@
   }
   
   @media (min-width: 992px) {
-    article {
+    my-resume {
       width: 960px;
       grid-template-rows: auto 1fr 1fr;
       grid-template-areas: "header  content  content"
@@ -278,7 +278,7 @@
   }
   
   @media (min-width: 1200px) {
-    article {
+    my-resume {
       width: 1140px;
     }
   }  
@@ -345,7 +345,7 @@
     content: " (" attr(href) ")";
   }
 
-  article {
+  my-resume {
     padding: 0;
     display: table;
   }
