@@ -3,18 +3,18 @@
 :root {
   --font-size: 16px;
   --line-height: 1.5rem;
-  --background-color: #fff;
-  --text-color: #333;
-  --link-color: #06c;
-  --link-color-visited: rebeccapurple;
-  --link-color-hover: #004080;
+  --background-color: light-dark(#fff, #151515);
+  --text-color: light-dark(#333, #fff);
+  --link-color: light(#06c, #92c5f9);
+  --link-color-visited: light-dark(#663399, #a578d2);
+  --link-color-hover: light-dark(#004080, #0381ff);
   --font-stack: "Roboto", "Helvetica", Arial, sans-serif;
   --font-stack-heading: "Roboto Condensed", "Helvetica", Arial, sans-serif;
 
   --grid-baseline: 1.5rem;
   --grid-baseline-shift: 0;
   --grid-thickness: 1px;
-  --grid-color: hsla(204, 80%, 72%, 0.25);
+  --grid-color: light-dark(rgba(126, 195, 241, 0.25), rgba(126, 195, 241, 0.5));
 
   --background-baseline: repeating-linear-gradient(
     to bottom,
