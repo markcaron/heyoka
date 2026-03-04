@@ -1,0 +1,76 @@
+:root {
+  /* Typography */
+  --font-size: 16px;
+  --line-height: 1.5em;
+  --font-stack: "Roboto", "Helvetica", Arial, sans-serif;
+  --font-stack-heading: "Roboto Condensed", "Helvetica", Arial, sans-serif;
+
+  /* Colors */
+  --color-text: light-dark(#151515, #fff);
+  --color-text-subtle: light-dark(#707070, #c7c7c7);
+  --color-link: light-dark(#06c, #92c5f9);
+  --color-link-visited: light-dark(#663399, #a578d2);
+  --color-link-hover: light-dark(#003366, #b9dafc);
+  --color-link-focus: light-dark(#394d72, #647fb1);
+  --color-link-focus-ring: light-dark(#06c, #92c5f9);
+
+  --color-cta-text: light-dark(#06c, #92c5f9);
+  --color-cta-border: light-dark(#06c, #92c5f9);
+  --color-cta-bg: transparent;
+  --color-cta-text-hover: light-dark(#fff, #151515);
+  --color-cta-bg-hover: light-dark(#06c, #92c5f9);
+
+  --color-tile-text-hover: #fff;
+  --color-tile-bg-hover: light-dark(#d93f0f, #e64310);
+  --color-tile-text-focus: var(--color-text);
+  --color-tile-bg-focus: transparent;
+  
+  --color-background: light-dark(#fff, #151515);
+  --color-background-subtle: light-dark(#e0e0e0, #383838);
+  --color-border: light-dark(#4d4d4d, #c7c7c7);
+  --color-border-subtle: light-dark(#c7c7c7, #707070);
+
+  /* Grids */
+  --grid-baseline: 1.5rem;
+  --grid-baseline-shift: 2px;
+  --grid-thickness: 1px;
+  --grid-color: light-dark(rgba(126, 195, 241, 0.25), rgba(126, 195, 241, 0.35));
+  
+  /* Etc. */
+  --border-width: 1px;
+  --border-width-thick: 3px;
+  --border-radius: 3px;
+  --border-radius-pill: 50%;
+  --wave-icon-size: 2rem;
+
+  --ui-border-radius: 3px;
+  --ui-spacing-block: 0.4rem;
+  --ui-spacing-inline: 0.5rem;
+
+  --box-shadow-sm: 0 2px 4px 0 rgba(21, 21, 21, 0.2);
+  --box-shadow-md: 0 4px 6px 1px rgba(21, 21, 21, 0.25);
+
+  /* Rhythm */
+  --background-baseline: repeating-linear-gradient(
+    to bottom,
+    var(--grid-color),
+    var(--grid-color) var(--grid-thickness),
+    transparent var(--grid-thickness),
+    transparent var(--grid-baseline)
+  );
+
+  color-scheme: light dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}

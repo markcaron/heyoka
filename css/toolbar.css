@@ -1,0 +1,33 @@
+#toolbar {
+  --mc-scheme-select-label-size: 0.875rem;
+  --mc-rhythm-toggle-label-size: 0.875rem;
+  --mc-scheme-select-min-width: 8rem;
+  --mc-rhythm-button-min-width: 8rem;
+
+  margin-block-start: 4rem;
+
+  @media (min-width: 48rem) {
+    --mc-scheme-select-display: flex;
+    --mc-scheme-select-display-direction: column;
+    --mc-scheme-select-display-gap: 0.25rem;
+    --mc-scheme-select-display-align: flex-start;
+    --mc-rhythm-toggle-display: flex;
+    --mc-rhythm-toggle-display-direction: column;
+    --mc-rhythm-toggle-display-gap: 0.25rem;
+    --mc-rhythm-toggle-display-align: flex-start;
+
+    position: fixed;
+    inset-inline-end: 1rem;
+    inset-block-end: 1rem;
+    z-index: 999;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    margin: 0;
+    padding: 1.5rem;
+    background: light-dark(rgba(255,255,255,0.95), rgba(0,0,0,0.85));
+    border: var(--border-width) solid var(--color-border-subtle);
+    border-radius: calc(var(--border-radius) * 2);
+    box-shadow: var(--box-shadow-sm);
+  }
+}

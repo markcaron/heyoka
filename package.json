@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "wds --node-resolve --open --watch"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6"
+  }
+}

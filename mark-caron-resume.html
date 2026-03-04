@@ -10,11 +10,13 @@
 
     <link href="css/resume.css" rel="stylesheet">
 
-    <script src="./js/resume.js"></script>
-    <script src="./js/mc-color-scheme-picker.js'"></script>
+    <script type="module">
+      import "/js/mc-scheme-select.js";
+      import "/js/mc-rhythm-toggle.js";
+    </script>
   </head>
   <body>
-    <mc-color-scheme-picker id="scheme" scheme="light"></mc-color-scheme-picker>
+
     <my-resume>
 
       <header>
@@ -132,7 +134,10 @@
       </aside>
     </my-resume>
 
-
+    <div id="toolbar">
+      <mc-scheme-select></mc-scheme-select>
+      <mc-rhythm-toggle></mc-rhythm-toggle>
+    </div>
 
   </body>
 </html>
