@@ -117,10 +117,10 @@
     grid-column-gap: 3rem;
     grid-row-gap: 0;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "header  header  header"
-                         "content content content"
-                         "sidebar sidebar sidebar";
+    grid-template-columns: 1fr;
+    grid-template-areas: "header"
+                         "content"
+                         "sidebar";
   }
   
   header {
@@ -212,6 +212,7 @@
   @media (min-width: 768px) {
     my-resume {
       width: 720px;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "header  header  header"
                            "content content sidebar";
     }
@@ -224,6 +225,7 @@
   @media (min-width: 992px) {
     my-resume {
       width: 960px;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "header  content  content"
                            "sidebar content content"
                            "sidebar  content  content";
