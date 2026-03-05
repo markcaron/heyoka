@@ -95,7 +95,7 @@ export default class McRhythmToggle extends HTMLElement {
                   }
 
                   & > #on {
-                    color: var(--color-link-inverted, #ffffff);
+                    color: var(--color-cta-text-hover, #ffffff);
                   }
 
                   & > #off {

@@ -34,7 +34,7 @@
   --grid-baseline: 1.5rem;
   --grid-baseline-shift: 2px;
   --grid-thickness: 1px;
-  --grid-color: light-dark(rgba(126, 195, 241, 0.25), rgba(126, 195, 241, 0.35));
+  --grid-color: light-dark(rgba(126, 195, 241, 0.25), rgba(126, 195, 241, 0.15));
   
   /* Etc. */
   --border-width: 1px;

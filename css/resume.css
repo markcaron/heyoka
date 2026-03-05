@@ -5,8 +5,6 @@
 @import 'toolbar.css' layer(toolbar);
 
 @layer base {
-  *, *::before, *::after { box-sizing: border-box; }
-
   body {
     margin: 0;
     padding: 1.5rem;
@@ -80,31 +78,31 @@
 
   :where(h1) {
     margin-block-start: .5rem;
-    margin-block-end: 1rem;
+    margin-block-end: calc(var(--grid-baseline) - 0.1rem);
     text-transform: uppercase;
-    font-size: 3.5rem;
+    font-size: 3.1rem;
     line-height: 1em;
     font-weight: 400;
     font-family: var(--font-stack-heading);
   }
   
   :where(h2) {
-    margin-block-start: .5rem;
-    margin-block-end: 1.5rem;
+    margin-block-start: calc(var(--grid-baseline) * .5);
+    margin-block-end: var(--grid-baseline);
     text-transform: uppercase;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: var(--font-size);
+    line-height: var(--grid-baseline);
   }
   
   :where(h3) {
     margin-block: 0;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: var(--font-size);
+    line-height: var(--grid-baseline);
   }
   
   :where(p) {
     margin-block-start: 0;
-    margin-block-end: 1.5rem;
+    margin-block-end: var(--grid-baseline);
   }
 }
 
@@ -112,165 +110,160 @@
   my-resume {
     width: 100%;
     margin: 0 auto;
-    padding-block-start: 1.5rem;
+    padding-block-start: var(--grid-baseline);
     display: grid;
-    grid-column-gap: 3rem;
+    grid-column-gap: calc(var(--grid-baseline) * 2);
     grid-row-gap: 0;
     grid-template-rows: auto;
     grid-template-columns: 1fr;
     grid-template-areas: "header"
                          "content"
                          "sidebar";
-  }
-  
-  header {
-    grid-area: header;
-    position: relative;
-    margin-block-end: 2.5rem;
-  }
-  
-  header strong {
-    font-weight: normal;
-  }
-  
-  .content {
-    grid-area: content;
-  }
-  
-  aside {
-    grid-area: sidebar;
-    margin-block-start: 1.5rem;
-  }
-  
-  /* Divding borders */
-  .content > section,
-  aside section {
-    position: relative;
-  }
-  
-  aside section {
-    margin-block-start: 3rem;
-  }
-  
-  aside section:first-child {
-    margin-block-start: 0;
-  }
-  
-  header::before {
-    position: absolute;
-    inset-inline-start: 0; inset-block-start: -.75rem;
-    width: 100%;
-    height: 1px;
-    content: '';
-    border-block-start: 0.375rem solid var(--color-text);
-  }
-  
-  .content > section::before,
-  aside section::before {
-    position: absolute;
-    inset-inline-start: 0; inset-block-start: -1.25rem;
-    width: 100%;
-    height: 1px;
-    content: '';
-    border-block-start: 0.125rem solid var(--color-text);
-  }
-  
-  .subsection {
-    margin-block-end: 3rem;
-  }
-  
-  .institution {
-    margin-block-end: 0;
-  }
 
-  .vcard .fn + br {
-    display: none;
-  }
-  
-  .subsection ul,
-  aside ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .subsection li,
-  aside li {
-    padding-inline-start: 1rem;
-    margin: 0;
-  }
-  
-  .subsection li::before,
-  aside li::before {
-    position: relative;
-    content: "+";
-    margin-inline-start: -1rem;
-    float: left;
-    line-height: 1.25rem;
-  }
+    header {
+      grid-area: header;
+      position: relative;
+      margin-block-end: 3.75rem;
 
-  @media (min-width: 768px) {
-    my-resume {
+      &::before {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: -0.75rem;
+        width: 100%;
+        height: 1px;
+        content: '';
+        border-block-start: 0.375rem solid var(--color-text);
+      }
+
+      strong {
+        font-weight: normal;
+      }
+    }
+  
+    main {
+      grid-area: content;
+    }
+
+    aside {
+      grid-area: sidebar;
+      margin-block-start: 3.75rem;
+
+      section {
+        margin-block-start: calc(var(--grid-baseline) * 2);
+
+        &:first-child {
+          margin-block-start: 0;
+        }
+      }
+    }
+
+    :is(main, aside) > section {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        inset-inline-start: 0; inset-block-start: -1.25rem;
+        width: 100%;
+        height: 1px;
+        content: '';
+        border-block-start: 0.125rem solid var(--color-text);
+      }
+    }
+
+    .subsection {
+      margin-block-end: calc(var(--grid-baseline) * 2);
+    }
+    
+    .institution {
+      margin-block-end: 0;
+    }
+
+    :is(.subsection, aside) ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        padding-inline-start: 1rem;
+        margin: 0;
+
+        &::before {
+          position: relative;
+          content: "+";
+          margin-inline-start: -1rem;
+          float: left;
+          line-height: var(--grid-baseline); /* was 1.25rem */
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
       width: 720px;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "header  header  header"
                            "content content sidebar";
+      grid-template-rows: auto 1fr;
+    
+      aside {
+        margin-block-start: -0.75rem;
+
+        section:first-child {
+          margin-block-start: var(--grid-baseline);
+        }
+      } 
     }
-  
-    aside {
-      margin-block-start: 0;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    my-resume {
+
+    @media (min-width: 992px) {
       width: 960px;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "header  content  content"
-                           "sidebar content content"
-                           "sidebar  content  content";
+                           "sidebar content content";
+      grid-template-rows: auto 1fr;
+
+      header {
+        margin-block-end: 0;
+      }
+
+      main {
+        margin-block-start: -0.25rem;
+      }
+    
+      aside {
+        margin-block-start: calc(var(--grid-baseline) * 3);
+
+        section:first-child {
+          margin-block-start: var(--grid-baseline);
+        }
+      }
+
+      :is(.education, .experience) h3 > .date {
+        float: right;
+        font-weight: normal;
+      }
+
+      .tel > .type,
+      .tel > .comma,
+      :is(.education, .experience) .date-comma {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+      }
     }
-  
-    header {
-      margin-block-end: 0;
-    }
-  
-    aside {
-      margin-block-start: 1.5rem;
-    }
-  
-    aside section:first-child {
-      margin-block-start: 1.5rem;
-    }
-  
-    .education h3 > .date,
-    .experience h3 > .date {
-      float: right;
-      font-weight: normal;
-    }
-  
-    .tel > .type,
-    .tel > .comma,
-    .education .date-comma,
-    .experience .date-comma {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    my-resume {
+
+    @media (min-width: 1200px) {
       width: 1140px;
     }
-  }  
-}
+  }
 
+  .vcard .fn + br {
+    display: none;
+  } 
+}
 
 @layer rhythm {
   /* Use with <mc-rhythm-button> */
