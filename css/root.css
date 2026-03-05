@@ -11,7 +11,7 @@
   --color-link: light-dark(#06c, #92c5f9);
   --color-link-visited: light-dark(#663399, #a578d2);
   --color-link-hover: light-dark(#003366, #b9dafc);
-  --color-link-focus: light-dark(#394d72, #647fb1);
+  --color-link-focus: light-dark(#003366, #b9dafc);
   --color-link-focus-ring: light-dark(#06c, #92c5f9);
 
   --color-cta-text: light-dark(#06c, #92c5f9);
