@@ -1,4 +1,5 @@
-/* Making the most basic Web Component possible by harnessing the native Customizable Select API */
+/* Making the most basic toggle Web Component possible */
+/* Leaning on a simple input:checkbox switch UI */
 export default class McRhythmToggle extends HTMLElement {
   constructor() {
       super();
@@ -106,11 +107,10 @@ export default class McRhythmToggle extends HTMLElement {
             }
           </style>
           <div id="container">
-            <!-- Showing vertical rhythm is strictly a visual concern -->
-            <label id="switch" aria-hidden="true">
-              <span id="label">Rhythm</span>
-              <input type="checkbox" name="rhythm" aria-hidden="true">
-              <span id="slide-container">
+            <label id="switch">
+              <span id="label" aria-label="Show/hide vertical rhythm">Rhythm</span>
+              <input type="checkbox" name="rhythm">
+              <span id="slide-container" aria-hidden="true">
                 <span id="off" class="option">Off</span>
                 <span id="on" class="option">On</span>
                 <span id="slide"></span>
