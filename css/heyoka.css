@@ -134,7 +134,7 @@
 
     @media (min-width: 60rem) {
       display: grid;
-      grid-template-columns: 48rem auto;
+      grid-template-columns: 38rem auto;
       grid-template-areas: "about social";
       gap: 4rem;
     }
@@ -177,14 +177,10 @@
     .resume {
       margin-block-start: 3rem;
     }
-
-    @media (min-width: 60rem) {
-      
-    }
   }
   
   #social {
-    --social-link-size: 7.5rem;
+    --social-link-size: 7rem;
 
     grid-area: social;
     margin: 4rem 0;
@@ -201,7 +197,7 @@
       padding: 0;
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-gap: 1rem;
       justify-items: center;
 
@@ -211,7 +207,7 @@
       }
 
       @media screen and (min-width: 60rem) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
