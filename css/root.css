@@ -20,8 +20,10 @@
   --color-cta-text-hover: light-dark(#fff, #151515);
   --color-cta-bg-hover: light-dark(#06c, #92c5f9);
 
-  --color-tile-text-hover: #fff;
-  --color-tile-bg-hover: light-dark(#d93f0f, #e64310);
+  /* --color-tile-text-hover: #fff; */
+  /* --color-tile-bg-hover: light-dark(#d93f0f, #e64310); */
+  --color-tile-text-hover: light-dark(#fff, #151515);
+  --color-tile-bg-hover: light-dark(#06c, #92c5f9);
   --color-tile-text-focus: var(--color-text);
   --color-tile-bg-focus: transparent;
   
