@@ -1,3 +1,57 @@
+@property --color-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #151515;
+}
+
+@property --color-background {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #fff;
+}
+
+@property --color-link {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #0066cc;
+}
+
+@property --color-link-hover {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #003366;
+}
+
+@property --color-surface-dark {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #1f1f1f;
+}
+
+@property --font-size {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 16px;
+}
+
+@property --line-height {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 1.5em;
+}
+
+@property --border-width {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 1px;
+}
+
+@property --wave-icon-size {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 2rem;
+}
+
 :root {
   /* Typography */
   --font-size: 16px;
@@ -9,7 +63,6 @@
   --color-text: light-dark(#151515, #fff);
   --color-text-subtle: light-dark(#707070, #c7c7c7);
   --color-link: light-dark(#06c, #92c5f9);
-  --color-link-visited: light-dark(#663399, #a578d2);
   --color-link-hover: light-dark(#003366, #b9dafc);
   --color-link-focus: light-dark(#003366, #b9dafc);
   --color-link-focus-ring: light-dark(#06c, #92c5f9);
@@ -27,10 +80,12 @@
   --color-tile-text-focus: var(--color-text);
   --color-tile-bg-focus: transparent;
   
-  --color-background: light-dark(#fff, #151515);
+  --color-background: light-dark(#fff, #1f1f1f);
   --color-background-subtle: light-dark(#e0e0e0, #383838);
   --color-border: light-dark(#4d4d4d, #c7c7c7);
   --color-border-subtle: light-dark(#c7c7c7, #707070);
+  --color-surface-dark: light-dark(#1f1f1f, #292929);
+  --color-footer-text: light-dark(#fff, #e0e0e0);
 
   /* Grids */
   --grid-baseline: 1.5rem;
@@ -40,9 +95,7 @@
   
   /* Etc. */
   --border-width: 1px;
-  --border-width-thick: 3px;
   --border-radius: 3px;
-  --border-radius-pill: 50%;
   --wave-icon-size: 2rem;
 
   --ui-border-radius: 3px;
@@ -73,6 +126,6 @@
   margin: -1px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   border: 0;
 }

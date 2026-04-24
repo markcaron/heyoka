@@ -25,7 +25,7 @@
     gap: 2rem;
     margin: 0;
     padding: 1.5rem;
-    background: light-dark(rgba(255,255,255,0.95), rgba(0,0,0,0.85));
+    background: light-dark(rgba(255,255,255,0.95), rgba(31,31,31,0.85));
     border: var(--border-width) solid var(--color-border-subtle);
     border-radius: calc(var(--border-radius) * 2);
     box-shadow: var(--box-shadow-sm);
