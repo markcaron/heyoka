@@ -123,7 +123,7 @@
     header {
       grid-area: header;
       position: relative;
-      margin-block-end: 3.75rem;
+      margin-block-end: 3.4rem;
 
       &::before {
         position: absolute;
@@ -138,6 +138,22 @@
       hgroup p {
         margin: 0;
         font-weight: normal;
+      }
+
+      .linkedin {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-block-start: calc(var(--grid-baseline) * 2);
+
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          padding: 0.125rem;
+          fill: var(--color-background);
+          background: var(--color-text);
+          border-radius: var(--ui-border-radius, 3px);
+        }
       }
     }
   
@@ -226,11 +242,11 @@
       }
 
       main {
-        margin-block-start: -0.25rem;
+        margin-block-start: -0.2rem;
       }
     
       aside {
-        margin-block-start: calc(var(--grid-baseline) * 3);
+        margin-block-start: calc(var(--grid-baseline) * 1.75);
 
         section:first-child {
           margin-block-start: var(--grid-baseline);
