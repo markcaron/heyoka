@@ -1,6 +1,6 @@
 @layer root, base, typography, layout, logos, toolbar;
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Roboto:wght@400;500;700&display=swap');
 @import 'root.css' layer(root);
 @import 'logos.css' layer(logos);
 @import 'toolbar.css' layer(toolbar);
@@ -89,9 +89,11 @@
 @layer typography {
   :where(h1) {
     margin: 0;
-    font-size: 2rem;
-    line-height: 1.2em;
-    font-weight: 500;
+    font-size: 3.1rem;
+    line-height: 1em;
+    font-weight: 400;
+    font-family: var(--font-stack-heading);
+    text-transform: uppercase;
   }
   
   :where(h2) {
@@ -105,10 +107,6 @@
     margin: 0;
     font-size: 0.875rem;
     line-height: var(--line-height);
-  }
-  
-  header p {
-    margin: 0;
   }
 }
 
@@ -183,6 +181,10 @@
         }
       }
     }
+  }
+  
+  header p {
+    margin: .5em 0 0;
   }
 
   header,
