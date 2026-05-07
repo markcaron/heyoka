@@ -1,0 +1,19 @@
+[[redirects]]
+  from = "/mark-caron-resume"
+  to = "/resume"
+  status = 301
+
+[[redirects]]
+  from = "/mark-caron-resume.html"
+  to = "/resume.html"
+  status = 301
+
+[[redirects]]
+  from = "/mark-caron-coaching"
+  to = "/coaching"
+  status = 301
+
+[[redirects]]
+  from = "/mark-caron-coaching.html"
+  to = "/coaching.html"
+  status = 301
