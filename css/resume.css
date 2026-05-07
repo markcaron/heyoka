@@ -293,7 +293,7 @@
 }
 
 @media print {
-  #toolbar,
+  mc-toolbar,
   .linkedin {
     display: none;
   }
