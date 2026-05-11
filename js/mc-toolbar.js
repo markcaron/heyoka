@@ -32,8 +32,8 @@ styles.replaceSync(`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
     padding: 0;
     border: var(--border-width, 1px) solid var(--color-border-subtle, #c7c7c7);
     border-radius: calc(var(--border-radius, 3px) * 2);
