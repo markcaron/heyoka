@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Performance Demo</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Mark Caron">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link href="/css/heyoka.css" rel="stylesheet">
+
+  <style>
+    body { max-width: 64rem; margin: 0 auto; padding: 1.5rem; }
+    .comparison { display: grid; gap: 2rem; margin-block: 2rem; }
+    @media (min-width: 48rem) { .comparison { grid-template-columns: 1fr 1fr; } }
+    .comparison figure { margin: 0; }
+    .comparison img { width: 100%; height: auto; border: 1px solid #ccc; border-radius: 4px; }
+    .comparison figcaption { margin-block-start: 0.5rem; font-size: 0.875rem; color: #555; }
+    .stats { display: inline-block; background: #f0f0f0; padding: 0.25rem 0.5rem; border-radius: 3px; font-family: monospace; font-size: 0.8125rem; }
+    table { border-collapse: collapse; margin-block: 1.5rem; width: 100%; max-width: 36rem; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem 0.75rem; text-align: left; }
+    th { background: #f5f5f5; }
+    .winner { font-weight: bold; color: #155724; }
+  </style>
+</head>
+
+<body>
+
+  <h1>Image Performance Demo</h1>
+  <p>Export a JPG at larger dimensions with lower quality. You get a smaller file that looks sharper than a smaller export at higher quality.</p>
+
+  <h2>The Comparison</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Export</th>
+        <th>Dimensions</th>
+        <th>Quality</th>
+        <th>File Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="winner">2500px, low quality</td>
+        <td>2500 × 1407</td>
+        <td>Low (~20–30%)</td>
+        <td class="winner">252 KB</td>
+      </tr>
+      <tr>
+        <td>1000px, high quality</td>
+        <td>1000 × 563</td>
+        <td>High (~80–90%)</td>
+        <td>621 KB</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The 2500px export has 6.25× more pixels and weighs <strong>less than half</strong> the file size.</p>
+
+  <div class="comparison">
+    <figure>
+      <img src="assets/boys-soccer-2500-low.jpg" alt="Boys soccer, exported at 2500px wide with low JPEG quality">
+      <figcaption>2500px wide, low quality · <span class="stats">252 KB</span></figcaption>
+    </figure>
+    <figure>
+      <img src="assets/boys-soccer-1000-high.jpg" alt="Boys soccer, exported at 1000px wide with high JPEG quality">
+      <figcaption>1000px wide, high quality · <span class="stats">621 KB</span></figcaption>
+    </figure>
+  </div>
+
+  <h2>Why This Works</h2>
+
+  <p>JPEG compression discards high-frequency detail: sharp edges, fine textures, subtle gradients. Lower quality settings discard more, which produces visible artifacts (banding, blockiness) at native resolution.</p>
+
+  <p><strong>The browser hides those artifacts when it downscales the image to display size.</strong> Downsampling blends neighboring pixels together, smoothing over the blocky compression boundaries before you see them.</p>
+
+  <ol>
+    <li><strong>Export at 2× or more of the display size.</strong> More source pixels give the browser more data to blend during the downscale.</li>
+    <li><strong>Drop JPEG quality to 20–30%.</strong> File size plummets because you're throwing away detail the downscale would have discarded anyway.</li>
+    <li><strong>Display at the intended size.</strong> The browser's downsampling acts as an anti-aliasing pass over the compression noise.</li>
+  </ol>
+
+  <p>You end up with a sharp image at a fraction of the file size. Artifacts that show at 1:1 zoom disappear at display size.</p>
+
+  <h2>When to Use This</h2>
+
+  <ul>
+    <li>Photographic content (landscapes, action shots, portraits) where organic texture masks compression noise</li>
+    <li>Hero images and backgrounds displayed at a fixed, smaller-than-source size</li>
+    <li>Pages that show the same image at multiple sizes (full view + thumbnail grid). One cached file serves both. The browser downloads it once and downsamples to each display size on the fly, instead of fetching separate assets per breakpoint.</li>
+  </ul>
+
+  <h2>When NOT to Use This</h2>
+
+  <ul>
+    <li>Images viewed at native resolution (lightboxes, pinch-to-zoom galleries)</li>
+    <li>Graphics with sharp text, lines, or flat color. Use PNG or SVG instead.</li>
+  </ul>
+
+  <h2>Modern Formats</h2>
+
+  <p>WebP and AVIF handle low-quality compression better than JPEG. You get fewer visible artifacts at equivalent file sizes because their encoders allocate bits more intelligently around perceptual edges.</p>
+
+  <ul>
+    <li><strong>WebP</strong> (lossy). Baseline in all browsers since 2023. 25–35% smaller than equivalent-quality JPEG.</li>
+    <li><strong>AVIF</strong>. Baseline in all browsers since late 2024. 40–50% smaller than JPEG. Encoding is slower.</li>
+  </ul>
+
+  <p>The same large-dimensions-low-quality strategy applies to both. You can push quality lower than you would with JPEG before artifacts show at display size.</p>
+
+</body>
+</html>
